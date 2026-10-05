@@ -44,16 +44,9 @@ header{
 .nav{
   min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:25px
 }
-.logo{
-  display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px
-}
-.logo-mark{
-  width:52px;height:52px;border:2px solid var(--green);border-radius:50%;
-  display:grid;place-items:center;font-size:25px;
-  box-shadow:0 0 22px rgba(0,255,102,.35)
-}
-.logo strong{font-size:25px}
-.logo span{display:block;font-size:12px;letter-spacing:5px;color:#ddd;text-align:center}
+.logo{display:flex;align-items:center;gap:12px;font-weight:900;letter-spacing:1px}
+.logo img{width:205px;height:68px;object-fit:contain;display:block;filter:drop-shadow(0 0 10px rgba(0,255,102,.22))}
+
 nav{display:flex;gap:28px;font-weight:700;font-size:14px}
 nav a:hover{color:var(--green);text-shadow:0 0 10px var(--green)}
 .btn{
@@ -138,6 +131,47 @@ footer{
   padding:25px 0;text-align:center;background:#020402;color:#8e9b93;
   border-top:1px solid rgba(0,255,102,.25);letter-spacing:3px;font-size:11px
 }
+
+
+.whatsapp-float{
+  position:fixed;
+  left:22px;
+  bottom:24px;
+  z-index:100;
+  display:flex;
+  align-items:center;
+  gap:10px;
+  padding:12px 17px 12px 12px;
+  border:1px solid #25d366;
+  border-radius:999px;
+  background:rgba(2,12,7,.94);
+  color:#fff;
+  box-shadow:0 0 22px rgba(37,211,102,.35), inset 0 0 14px rgba(37,211,102,.08);
+  backdrop-filter:blur(8px);
+  font-weight:800;
+  transition:transform .2s, box-shadow .2s, background .2s;
+}
+.whatsapp-float:hover{
+  transform:translateY(-3px);
+  background:#25d366;
+  color:#001b09;
+  box-shadow:0 0 32px rgba(37,211,102,.6);
+}
+.whatsapp-icon{
+  width:40px;height:40px;border-radius:50%;
+  display:grid;place-items:center;
+  background:#25d366;color:#fff;font-size:22px;
+  font-weight:900;
+}
+.whatsapp-text{line-height:1.1}
+.whatsapp-text small{display:block;font-size:10px;letter-spacing:1px;opacity:.8}
+.whatsapp-text b{font-size:14px}
+@media(max-width:600px){
+  .whatsapp-float{left:12px;bottom:15px;padding:10px}
+  .whatsapp-icon{width:42px;height:42px}
+  .whatsapp-text{display:none}
+}
+
 @media(max-width:1000px){
   .cards{grid-template-columns:repeat(2,1fr)}
   .why{grid-template-columns:repeat(2,1fr)}
@@ -148,7 +182,7 @@ footer{
 }
 @media(max-width:600px){
   .nav{min-height:68px}
-  .logo strong{font-size:19px}.logo-mark{width:42px;height:42px}
+  .logo img{width:175px;height:60px}
   .hero{min-height:590px}.hero-content{padding:80px 0}
   h1{font-size:45px}
   .cards,.why{grid-template-columns:1fr}
@@ -161,11 +195,18 @@ footer{
 </head>
 <body>
 
+
+<a class="whatsapp-float"
+   href="https://wa.me/447928388124?text=Hello%20CyberNox%20GreyHat%2C%20I%20would%20like%20to%20discuss%20an%20investigation."
+   target="_blank" rel="noopener noreferrer" aria-label="Contact CyberNox GreyHat on WhatsApp">
+  <span class="whatsapp-icon">☎</span>
+  <span class="whatsapp-text"><small>CHAT WITH US</small><b>WhatsApp</b></span>
+</a>
+
 <header>
   <div class="container nav">
     <a class="logo" href="#home" aria-label="CyberNox GreyHat home">
-      <div class="logo-mark">N</div>
-      <div><strong>CYBER<span class="glow">NOX</span></strong><span>GREYHAT</span></div>
+      <img src="cybernox-logo.png" alt="CyberNox GreyHat">
     </a>
     <nav>
       <a href="#home">HOME</a>
@@ -276,7 +317,7 @@ footer{
     </div>
     <div>
       <strong>OUR ADDRESS</strong>
-      <div class="big">London, Moris Road 87BB</div>
+      <div class="big">London, Morris Road E14</div>
     </div>
     <a class="btn" href="tel:+447928388124">CONTACT US ↗</a>
   </div>
